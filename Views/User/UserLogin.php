@@ -14,17 +14,23 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-            <form>
-              <h1>Login Form</h1>
+              <form action="/eCommerce/User/doLoginUser" method="post">
+              <h1>Login Form x</h1>
               <div>
-                <input type="text" class="form-control" placeholder="Username" required="" />
+                  <input name= useremail type="email" class="form-control" placeholder="Username" required="" value="d@g.com"/>
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
+                <input name= userpassword type="password" class="form-control" placeholder="Password" required="" />
               </div>
               <div>
-                <a class="btn btn-default submit" href="index.html">Log in</a>
-                <a class="reset_pass" href="#">Lost your password?</a>
+                  <input class="btn btn-default" type="submit" placeholder="Submit" />
+              <?php
+              
+              if(isset($msg)){
+              echo '<p class="bg-danger">'.$msg.'</p>';
+                  
+              }
+                  ?>
               </div>
 
 <!--              <div class="clearfix"></div>

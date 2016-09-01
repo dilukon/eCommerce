@@ -1,22 +1,30 @@
 <?php
 
-$url = 'default';
+//$url = 'default';
+//
+//$url = $_SERVER['REQUEST_URI'];
+//
+//$url = rtrim($url,'.php');
+//
+//$url = ltrim($url, '/eCommerce/');
+//
+//$url= rtrim($url,'/');
 
-$url = $_SERVER['REQUEST_URI'];
-
-$url = rtrim($url,'.php');
-
-$url = ltrim($url, '/eCommerce/');
+$url= $_GET['url'];
 
 $url= rtrim($url,'/');
+
+
 
 $url = explode('/',$url);
         
 print_r ($url);
 
-require 'controller/' . $url[0] . '.php';
+require 'Controllers/' . $url[0] . '.php';
 
 $controller = new $url[0];
+
+
 
 if (isset($url[2])) {
             $controller->{$url[1]}($url[2]);
